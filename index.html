@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app='app'>
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown Stars</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-flex.css">
+    <link rel="stylesheet" href="dist/css/app.css">
+</head>
+<body class="countdown-app">
+    <div class="container page" ng-controller="UserCtrl">
+        <img src="{{ user.avatar_url }}" alt="{{ user.name }}" class="avatar rounded-circle">
+        <header class="page-header">
+            <h1>{{ user.name }}</h1>
+            <small>{{ user.bio }}</small>
+        </header>
+
+        <div class="content">
+
+        </div>
+    </div>
+
+    <aside class="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </aside>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="dist/js/app.js"></script>
+</body>
+</html>
