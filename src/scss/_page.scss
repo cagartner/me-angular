@@ -1,0 +1,47 @@
+.page {
+    background-color: $light-cl;
+    min-height: 40vh;
+    box-shadow: 1px 3px 3px  darken($black-cl, 10%);
+    padding: 5rem;
+    color: $black-cl;
+    position: relative;
+    display: none;
+}
+
+.page-header small {
+    font-size: 1rem;
+}
+
+.avatar {
+    width: 150px;
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    margin-left: -75px;
+}
+
+.grid-statics {
+    @include make-row();
+    margin-top: 2rem;
+    border-top: solid 1rem $secundary-cl;
+    padding-top: 1rem;
+
+    .column {
+        @include make-col(4);
+        text-align: center;
+
+        &--title {
+            font-size: 1.3rem;
+        }
+
+        .rounded-circle {
+            background-color: $secundary-cl;
+            width: 5rem;
+            height: 5rem;
+            display: inline-block;
+            margin: 1rem auto;
+            padding-top: 1.7rem;
+        }
+    }
+
+}
