@@ -8,8 +8,9 @@
 <body class="countdown-app">
     <div class="container page" ng-controller="UserCtrl">
         <img ng-src="{{ user.avatar_url }}" alt="{{ user.name }}" class="avatar rounded-circle">
+
         <header class="page-header">
-            <h1>{{ user.name }}</h1>
+            <h1 class="display-3">{{ user.name }}</h1>
             <small>{{ user.bio }}</small>
         </header>
 
@@ -17,28 +18,36 @@
 
             <div class="column">
                 <h3 class="column--title">Repositórios</h3>
-                <div class="rounded-circle align-middle">
-                    {{ user.public_repos }}
-                </div>
+                <a class="rounded-circle align-middle" ng-href="https://github.com/{{ user.login }}/repositories" target="_blank">
+                    <i class="fa fa-github-alt"></i>
+                    <span class="tag">{{ user.public_repos }}</span>
+                </a>
             </div>
 
             <div class="column">
                 <h3 class="column--title">Gists</h3>
-                <div class="rounded-circle align-middle">
-                    {{ user.public_gists }}
-                </div>
+                <a class="rounded-circle align-middle" ng-href="https://github.com/{{ user.login }}/gists" target="_blank">
+                    <i class="fa fa-code"></i>
+                    <span class="tag">{{ user.public_gists }}</span>
+                </a>
+
             </div>
 
             <div class="column">
                 <h3 class="column--title">Seguidores</h3>
-                <div class="rounded-circle align-middle">
-                    {{ user.followers }}
-                </div>
+                <a class="rounded-circle align-middle" ng-href="https://github.com/{{ user.login }}/followers" target="_blank">
+                    <i class="fa fa-users"></i>
+                    <span class="tag">{{ user.followers }}</span>
+                </a>
             </div>
 
         </section>
 
+        <div class="resume" btf-markdown="resume">
+            {{ resume }}
+        </div>
     </div>
+    <!-- /End container page-->
 
     <aside class="loader">
         <div class="spinner">

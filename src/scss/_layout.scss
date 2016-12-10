@@ -4,14 +4,20 @@
 }
 
 body {
-    background-color: $black-cl;
+    //background-color: $black-cl;
     color: $light-cl;
     font-family: 'Roboto', sans-serif;
     padding-top: 5rem;
     font-weight: 300;
+    @extend .gradient;
 }
 
 h1 {
     font-size: 2rem;
     font-weight: 300;
+}
+
+
+a {
+    color: #348AC7
 }

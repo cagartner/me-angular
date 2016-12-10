@@ -15,7 +15,6 @@ gulp.task('serve', function () {
 
     gulp.watch('src/**/*.js', ['js']);
     gulp.watch('src/**/*.scss', ['css']);
-
     // add browserSync.reload to the tasks array to make
     // all browsers reload after tasks are complete.
     gulp.watch('*.html').on('change', browserSync.reload);
@@ -25,6 +24,9 @@ gulp.task('js', function () {
     gulp.src([
         'bower_components/jquery/dist/jquery.min.js',
         'bower_components/angular/angular.min.js',
+        'bower_components/angular-sanitize/angular-sanitize.js',
+        'bower_components/showdown/compressed/Showdown.min.js',
+        'bower_components/angular-markdown-directive/markdown.js',
         'bower_components/tether/dist/js/tether.min.js',
         'bower_components/bootstrap/dist/js/bootstrap.min.js',
         'src/js/**/app.js',
@@ -40,13 +42,21 @@ gulp.task('js', function () {
 });
 
 gulp.task('css', function () {
-  return gulp.src('src/scss/**/*.scss')
-      .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-      .pipe(gulp.dest('./dist/css'))
-      .pipe(browserSync.stream());
+    return gulp.src('src/scss/**/*.scss')
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('watch', ['js','css'], function () {
+// Fonts
+gulp.task('fonts', function () {
+    return gulp.src([
+        'bower_components/font-awesome/fonts/fontawesome-webfont.*'
+    ])
+        .pipe(gulp.dest('dist/fonts/'));
+});
+
+gulp.task('watch', ['js', 'css'], function () {
     gulp.watch('src/**/*.js', ['js']);
     gulp.watch('src/**/*.scss', ['css']);
 });
